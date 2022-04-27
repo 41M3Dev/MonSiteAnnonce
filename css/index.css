@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: rgb(190, 176, 176);
+  position: relative;
+}
+
+.container{
+  max-width: 2000px;
+  overflow: hidden;
+  padding: 10px 0;
+}
+.container .main-card{
+  display: flex;
+  width: 200%;
+}
+
+.container .main-card .cards{
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 20px;
+  justify-content: space-between;
+}
+.main-card .cards .cardH,.main-card .cards .cardB{
+  width: calc(100% / 3 - 10px);
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+}
+.main-card .cards .cardH:hover,.main-card .cards .cardB:hover{
+  transform: translateY(-20px)
+}
+.cards .cardH .content,.cards .cardB .content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.cards .cardH .content .img, .cards .cardB .content .img{
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  padding: 3px;
+  background: #FF676D;
+  margin-bottom: 14px;
+}
+.cardH .content .img img, .cardB .content .img img{
+  height: 100%;
+  width: 100%;
+  border: 3px solid #ffff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.card .content .name{
+  font-size: 20px;
+  font-weight: 500;
+}
+.cardH .content .job a, .cardB .content .job a{
+  font-size: 20px;
+  color: #FF676D;
+  text-decoration: none;
+}
+.cardB{
+  margin-top: 25px;
+}
+#cardBG{
+  margin-right: 20px;
+}
+#cardHG{
+  margin-right: 20px;
+}
+
+
+
+.footer-content-right {
+  background-color: rgb(124, 15, 15);
+  padding-right:40px;
+  margin-top:20px;
+  float:right;
+}
+
+.icon-style {
+  height:40px;
+  margin-left:20px;
+  margin-top:5px;
+}
+
+.icon-style:hover {
+  background-color:yellow;
+  padding:5px;
+}
+
+
+/*bouton pour changer le slide*/
+
+/*______________________________________________________________________________________________________________________________________________*/
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #1d1d1d;
+}
+.logo, .navbar ul li a{
+  color:#fff ;
+}
+.navbar ul{
+  display: flex;
+  align-items: center;
+
+list-style-type:  none;
+}
+
+.navbar ul li a {
+  padding: 12px;
+  margin: 0 6px;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover{
+  color: rgb(243, 13, 52);
+  background-color: yellow;
+  border-radius: 4px;
+
+
+}
+
+
+
+
+.form__field {
+  margin-top: 5px;
+  text-align: center;
+  position: relative;
+}
+
+.form__input {
+  border-radius: 0.25em;
+  border-style: solid;
+  border-width: 2px;
+  font-size: 1.5rem;
+  padding: 0.5em 4em 0.5em 2em;
+}
+
+
+.searchButton{
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  color: #eeeeee;
+  font-size: 20px;
+  background-color: #153f00;
+  padding: 15px 50px;
+  margin: 0 auto;
+
+}
+/**Résulat de la recherche**/
+section{
+  width: 100%;
+  margin: 20px auto;
+  border: solid 2px #040303;
+  border-radius: 10px;
+  width: 800px;
+  padding: 10px;
+  
+}
+#titre_cate{
+color:rgb(243, 13, 52);
+  text-align: center;
+}
+#titre{
+  color:rgb(243, 13, 52);
+  text-align: center;
+}
+
+a{
+text-decoration:none;
+}
+/***fin de css de la recherche***/
+
+/*
+label, #toggle
+{
+    display: none;
+}
+
+
+@media all and (max-width: 600px)
+{
+    nav
+    {
+        height: 60px;
+    }
+ 
+    nav #main_pages 
+    {
+        display: none;
+        flex-direction: column;
+        background: #48435C;
+        height: 220px;
+    }
+ 
+    nav #main_pages a {
+        width: 50%;
+    }
+ 
+    label 
+    {
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
+ 
+    #toggle:checked + #main_pages {
+        display: flex;
+    }
+}*/

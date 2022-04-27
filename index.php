@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-maj
 <?php 
     // Connexion et choix de la base de données
     require_once 'config/config.php';

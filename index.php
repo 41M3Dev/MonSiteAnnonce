@@ -14,7 +14,7 @@
     <body>
         <header>
             <nav class="navbar" id="myNavbar">
-                <a href=""><h2 class="logo">MonSite</h2></a>
+                <a href=""><h2 class="logo">WebSite</h2></a>
                 <ul id="main_pages">
                     <li><a href="nc/connexion.php">Se Connecter</a></li>
                     <li><a href="nc/inscription.php">S'inscire</a></li>

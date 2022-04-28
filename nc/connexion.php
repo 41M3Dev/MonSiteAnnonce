@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/conex.css">
+	<link rel="stylesheet" href="../css/connexion.css">
 	<title>Document</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
     </script>
 	<header>
 		<nav class="navbar">
-			<a href="../index.php"><h2 class="logo">MonSite</h2></a>
+			<a href="../index.php"><h2 class="logo">WebSite</h2></a>
 			<ul>
 				<li><a href="inscription.php">S'inscire</a></li>
 				<li><a href="insert.php">Déposer une annonce</a></li>

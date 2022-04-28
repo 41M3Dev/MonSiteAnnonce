@@ -18,13 +18,13 @@
     <head>
         <meta charset="UTF-8">
         <title>Document</title>
-        <link rel="stylesheet" href="../css/test.css">
+        <link rel="stylesheet" href="../css/recherche.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
         <nav class="navbar">
-                <a href="index.php"><h2 class="logo">MonSite</h2></a>
+                <a href="index.php"><h2 class="logo">WebSite</h2></a>
                 <ul>
                     <li><a href="../config/deconnexion.php">Se Déconnecter</a></li>
                     <li><a href="insert.php">Déposer une annonce</a></li>

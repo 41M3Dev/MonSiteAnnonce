@@ -23,7 +23,7 @@
         }
     </script>
         <nav class="navbar">
-            <a href="../index.php"><h2 class="logo">MonSite</h2></a>
+            <a href="../index.php"><h2 class="logo">WebSite</h2></a>
             <ul>
                 <li><a href="connexion.php">Se Connecter</a></li>
                 <li><a href="inscription.php">S'inscire</a></li>
@@ -63,8 +63,6 @@
 </html>
 
 <?php
-    // Connexion et choix de la base de données
-        $connexion = mysqli_connect("127.0.0.1", "root", "","projetAnnonce");
         if(!empty($_GET['titre']) && !empty($_GET['descrip']) && !empty($_GET['vente']) && !empty($_GET['loca']) && !empty($_GET['mail']) && !empty($_GET['cate']))
         {
     //Récpétration des valeur

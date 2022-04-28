@@ -25,7 +25,7 @@
     <body>
         <header>
             <nav class="navbar" id="myNavbar">
-                <a href=""><h2 class="logo">MonSite</h2></a>
+                <a href=""><h2 class="logo">WebSite</h2></a>
                 <ul id="main_pages">
                     <li><a href="../config/deconnexion.php">Se Déconnecter</a></li>
                     <li><a href="rechercheAvance.php">Recherche</a></li>

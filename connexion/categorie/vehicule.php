@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Site d'annonce</title>
-    <link rel="stylesheet" href="../../css/style2.css">
+    <link rel="stylesheet" href="../../css/annonce.css">
 </head>
 <body id="bodyV">
     <nav class="navbar">

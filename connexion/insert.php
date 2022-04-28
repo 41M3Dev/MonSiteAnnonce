@@ -35,7 +35,7 @@
         }
     </script>
         <nav class="navbar">
-            <a class="logo" href="index.php"><h2 >RodeUnNom</h2></a>
+            <a class="logo" href="index.php"><h2 >WebSite</h2></a>
             <ul>
                 <li><a href="../config/deconnexion.php">Se Déconnecter</a></li>
                 <li><a href="rechercheAvance.php">Recherche</a></li>

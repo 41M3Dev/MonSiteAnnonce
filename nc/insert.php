@@ -97,8 +97,10 @@
         $cate = $_GET['cate'];
         if(filter_var($mail, FILTER_VALIDATE_EMAIL)){  
     // Insertion des valeur dans la base de donnée
-        $requete = "INSERT INTO `annonce`(`titre`, `description`,`vente_location`, `localisation`, `contact`, `categorie`, `pseudo`) VALUES ('$titre','$descrip','$location','$loca','$mail','$cate','Invité')";
-        mysqli_query($connexion, $requete);
+        $requete = "INSERT INTO `annonce`(`titre`, `description`,`vente_location`, `localisation`, `contact`, `categorie`, `pseudo`) VALUES (?,?,?,?,?,?,?)";
+        
+        $res = $bdd->prepare($requete);
+        $exec = $res->execute(array($titre,$descrip,$location,$loca,$mail,$cate,'Invité'));
         echo '<script>envoye("Votre annonce a bien était publié");</script>';}
         else{
             echo '<script>erreur("Mail incorrect");</script>';

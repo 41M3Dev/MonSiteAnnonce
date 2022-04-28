@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php 
+    // Connexion et choix de la base de données
+    require_once '../config/config.php';
+?>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
@@ -36,21 +40,19 @@
                 </form>
         <?php
         if(isset($_GET['valider'])){
-            // Connexion et choix de la base de données
-            $connexion = mysqli_connect("127.0.0.1", "root", "","projetAnnonce");
             // Récupère la recherche
             if(!empty($_GET['titre']) && empty($_GET['cate']) && empty($_GET['localisation'])){
                 $rechercheTitre = $_GET['titre'];
                 $sql="SELECT `id`, `titre`, `description`, `vente_location`, `localisation`, `contact`, `categorie`, `pseudo`, `datePublication`
                 FROM `annonce` WHERE `titre` LIKE '%$rechercheTitre%'";
-                $result=mysqli_query($connexion,$sql)  or die ("bad query");
+                $search = $bdd->query($sql);
             }
             if(!empty($_GET['titre']) && !empty($_GET['cate'])){
                 $rechercheCate = $_GET['cate'];
                 $rechercheTitre = $_GET['titre'];
                 $sql="SELECT `id`, `titre`, `description`, `vente_location`, `localisation`, `contact`, `categorie`, `pseudo`, `datePublication`
                 FROM `annonce` WHERE `titre` LIKE '%$rechercheTitre%' AND `categorie` = '$rechercheCate'";
-                $result=mysqli_query($connexion,$sql)  or die ("bad query");
+                 $search = $bdd->query($sql);
             }
                 
             if(!empty($_GET['titre']) && !empty($_GET['cate']) && !empty($_GET['localisation'])){
@@ -59,29 +61,21 @@
                 $rechercheTitre = $_GET['titre'];
                 $sql="SELECT `id`, `titre`, `description`, `vente_location`, `localisation`, `contact`, `categorie`, `pseudo`, `datePublication`
                 FROM `annonce` WHERE `titre` LIKE '%$rechercheTitre%' AND `categorie` = '$rechercheCate' AND `localisation` = '$rechercheLoca'";
-                $result=mysqli_query($connexion,$sql)  or die ("bad query");
+                 $search = $bdd->query($sql);
             }
-        
-
-                
                 
             // affichage du résultat
-                while ($row=mysqli_fetch_assoc($result)){
+                while ($row = $search->fetch(PDO::FETCH_ASSOC)){
         ?>
                     <section>
                         <div>
-                            <?php /*echo "<h2>{$row['titre']}</h2>
-                                        <h3> Catégorie :</h3>{$row['categorie']}
-                                        <h3> Description : </h3>{$row['description']}
-                                        <h3> Localisation :</h3>{$row['localisation']}";
-                                echo ' <a href="mailto:'.$row['contact'].'"><h4>Contact</h4></a> ';*/
-                            ?>
                             <table>
                                 <thead>
                                     <tr>
+                                        <th scope="col">Titre</th>
                                         <th scope="col">Catégorie</th>
                                         <th scope="col">Description</th>
-                                        <th scope="col">Loacalisation</th>
+                                        <th scope="col">Localisation</th>
                                         <th scope="col">Contact</th>
                                     </tr>
                                 </thead>
@@ -90,6 +84,7 @@
                                         <td scope="col"><?=$row['titre']?></td>
                                         <td scope="col"><?=$row['categorie']?></td>
                                         <td scope="col"><?=$row['description']?></td>
+                                        <td scope="col"><?=$row['localisation']?></td>
                                         <td scope="col"><?php echo ' <a href="mailto:'.$row['contact'].'"><h4>Contact</h4></a> ';?></td>
                                     </tr>
                 </tbody>

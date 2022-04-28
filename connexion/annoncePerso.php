@@ -34,26 +34,26 @@
         <a href="index.php"><h2 class="logo">WebSite</h2></a>
         <ul>
             <li><a href="../config/deconnexion.php">Se Déconnecter</a></li>
-            <li><a href="recherche.php">Recherche</a></li>
+            <li><a href="rechercheAvance.php">Recherche</a></li>
             <li><a href="insert.php">Déposer une annonce</a></li>
 <!-- <li><a href="compte.php">Compte</a></li>-->        </ul>
     </nav>
     <div class="pageC">
         <?php
-
-        // Connexion et choix de la base de données
-            $connexion = mysqli_connect("127.0.0.1", "root", "","projetAnnonce");
+            
         // Affihce les valeur de la base de donnée
             $sql="SELECT `titre`, `description`, `localisation`, `contact`, `categorie`,`pseudo` FROM `annonce` WHERE `pseudo` LIKE '$pseudo' ";
+            $result = $bdd->query($sql);
+
+            ?>
             
-            $result=mysqli_query($connexion,$sql)  or die ("bad query");?>
             <form id="form_field"  method="GET" >
             <input id ="form_input" type="text" name="supp" placeholder="Titre de l'annonce à supprimer">
                 <button id="searchButton" ><i class="fa-solid fa-ban"></i> Supprimer</button>
                 
             </form>
         <?php
-            while ($row=mysqli_fetch_assoc($result)){?>
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)){?>
             <section>
                 <div>
                     <?php echo "<h1>{$row['titre']}</h1>
@@ -77,7 +77,8 @@
                 $row = $check->rowCount();
                 if( $row > 0 ){
             $requete = "DELETE FROM `annonce` WHERE titre = '$supp' AND pseudo = '$pseudo' ";
-            mysqli_query($connexion, $requete);
+            $supp = $bdd->prepare($requete);
+            $supp->execute();
             echo'<script>supp("Votre annonce à bine été supprimer");</script>';
                 }
             }

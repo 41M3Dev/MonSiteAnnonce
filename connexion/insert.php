@@ -38,7 +38,7 @@
             <a class="logo" href="index.php"><h2 >RodeUnNom</h2></a>
             <ul>
                 <li><a href="../config/deconnexion.php">Se Déconnecter</a></li>
-                <li><a href="recherche.php">Recherche</a></li>
+                <li><a href="rechercheAvance.php">Recherche</a></li>
                 <li><a href="insert.php">Déposer une annonce</a></li>
                 <li><a href="annoncePerso.php">Vos une annonce</a></li>
             </ul>

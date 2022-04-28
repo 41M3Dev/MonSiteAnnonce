@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Site d'annonce</title>
-    <link rel="stylesheet" href="../../../css/style2.css">
+    <link rel="stylesheet" href="../../css/style2.css">
 </head>
 <body id="bodyD">
     <nav class="navbar">
@@ -17,8 +17,8 @@
     </nav>
         <?php
 
-require_once '../../config/config.php';
-$check = $bdd->prepare( "SELECT `titre`, `description`, `localisation`, `contact`, `categorie` FROM `annonce` WHERE `categorie` LIKE 'Decoration'"  );
+            require_once '../../config/config.php';
+            $check = $bdd->prepare( "SELECT `titre`, `description`, `localisation`, `contact`, `categorie` FROM `annonce` WHERE `categorie` LIKE 'Decoration'"  ); 
             $check->execute();
             $comp = $check->rowCount();
                 if( $comp == 0 ){
@@ -33,17 +33,11 @@ $check = $bdd->prepare( "SELECT `titre`, `description`, `localisation`, `contact
                 </section>
                 <?php
                 }
-        // Connexion et choix de la base de données
-            $connexion = mysqli_connect("127.0.0.1", "root", "","projetAnnonce");
-            if ($connexion -> connect_errno){
-                echo"Y marche pas gars";
-            }
         // Affihce les valeur de la base de donnée
             $sql="SELECT `titre`, `description`, `localisation`, `contact`, `categorie` FROM `annonce` WHERE `categorie` LIKE 'Decoration'";
-            
-            $result=mysqli_query($connexion,$sql)  or die ("bad query");
+            $result = $bdd->query($sql);
 
-            while ($row=mysqli_fetch_assoc($result)){?>
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)){?>
                 <div>
                     <?php echo "<h1>{$row['titre']}</h1>
                                 <h3> Catégorie :</h3>{$row['categorie']}

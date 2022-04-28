@@ -67,7 +67,7 @@
                         <div class="cardH" id="cardHG">
                             <div class="content">
                                 <div class="img">
-                                    <img src="img/loto.jpg" alt="">
+                                    <img src="img/voiture.jpg" alt="">
                                 </div>
                                 <div class="details">
                                     <div class="job"> <a href="nc/categorie/vehicule.php">Véhicule</a> </div>

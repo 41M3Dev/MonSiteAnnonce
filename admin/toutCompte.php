@@ -14,17 +14,12 @@
         </ul>
     </nav>
         <?php
-        // Connexion et choix de la base de données
-            $connexion = mysqli_connect("127.0.0.1", "root", "","projetAnnonce");
-            if ($connexion -> connect_errno){
-                echo"Y marche pas gars";
-            }
         // Affihce les valeur de la base de donnée
             $sql="SELECT `pseudo`, `email`, `date_inscription` FROM `utilisateurs`";
             
-            $result=mysqli_query($connexion,$sql)  or die ("bad query");
+             $result = $bdd->query($sql);
 
-            while ($row=mysqli_fetch_assoc($result)){?>
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)){?>
             <section>
                 <div>
                     <?php echo "<h1>{$row['pseudo']}</h1>

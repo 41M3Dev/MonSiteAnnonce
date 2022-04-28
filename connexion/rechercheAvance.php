@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<?php
-    session_start();
+<!--OK POUR LE MOMENT-->
+<?php session_start();
     require_once '../config/config.php';
-    
+    if(!$_SESSION['pseudo']){
+        header('Location: connexion.php');
+    }
     $req = $bdd->prepare('SELECT * FROM utilisateurs WHERE pseudo = ?');
     $req->execute(array($_SESSION['pseudo']));
     $data = $req->fetch();
+    $pseudo = $data['pseudo'];
     if(!$_SESSION['pseudo']){
         header('Location: ../nc/connexion.php');
     }
+
 ?>
 <html lang="fr">
     <head>
@@ -20,9 +24,9 @@
     <body>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
         <nav class="navbar">
-                <a href="index.php"><h2 class="logo">RodeUnNom</h2></a>
+                <a href="index.php"><h2 class="logo">MonSite</h2></a>
                 <ul>
-                <li><a href="../config/deconnexion.php">Se Déconnecter</a></li>
+                    <li><a href="../config/deconnexion.php">Se Déconnecter</a></li>
                     <li><a href="insert.php">Déposer une annonce</a></li>
                     <li><a href="annoncePerso.php">Vos une annonce</a></li>
                 </ul>
@@ -31,7 +35,7 @@
                 <h1>Votre recherche</h1>
                 <form method="GET">
                 <div class="container">
-                        <input class="test" name="titre" type="text" placeholder="Que cherchez-vous ?"  required>
+                        <input class="test" name="titre" type="text" placeholder="Que cherchez-vous ?" required>
                         <select class="inputbox"  name="cate" >
                             <option value="">Catégorie</option>
                             <option value="Decoration">Décoration</option>
@@ -47,21 +51,19 @@
                 </form>
         <?php
         if(isset($_GET['valider'])){
-            // Connexion + filtre
-            $connexion = mysqli_connect("127.0.0.1", "root", "","projetAnnonce");
             // Récupère la recherche
             if(!empty($_GET['titre']) && empty($_GET['cate']) && empty($_GET['localisation'])){
                 $rechercheTitre = $_GET['titre'];
                 $sql="SELECT `id`, `titre`, `description`, `vente_location`, `localisation`, `contact`, `categorie`, `pseudo`, `datePublication`
                 FROM `annonce` WHERE `titre` LIKE '%$rechercheTitre%'";
-                $result=mysqli_query($connexion,$sql)  or die ("bad query");
+                $search = $bdd->query($sql);
             }
             if(!empty($_GET['titre']) && !empty($_GET['cate'])){
                 $rechercheCate = $_GET['cate'];
                 $rechercheTitre = $_GET['titre'];
                 $sql="SELECT `id`, `titre`, `description`, `vente_location`, `localisation`, `contact`, `categorie`, `pseudo`, `datePublication`
                 FROM `annonce` WHERE `titre` LIKE '%$rechercheTitre%' AND `categorie` = '$rechercheCate'";
-                $result=mysqli_query($connexion,$sql)  or die ("bad query");
+                 $search = $bdd->query($sql);
             }
                 
             if(!empty($_GET['titre']) && !empty($_GET['cate']) && !empty($_GET['localisation'])){
@@ -70,14 +72,11 @@
                 $rechercheTitre = $_GET['titre'];
                 $sql="SELECT `id`, `titre`, `description`, `vente_location`, `localisation`, `contact`, `categorie`, `pseudo`, `datePublication`
                 FROM `annonce` WHERE `titre` LIKE '%$rechercheTitre%' AND `categorie` = '$rechercheCate' AND `localisation` = '$rechercheLoca'";
-                $result=mysqli_query($connexion,$sql)  or die ("bad query");
+                 $search = $bdd->query($sql);
             }
-        
-
-                
                 
             // affichage du résultat
-                while ($row=mysqli_fetch_assoc($result)){
+                while ($row = $search->fetch(PDO::FETCH_ASSOC)){
         ?>
                     <section>
                         <div>
@@ -99,8 +98,8 @@
                                         <td scope="col"><?=$row['localisation']?></td>
                                         <td scope="col"><?php echo ' <a href="mailto:'.$row['contact'].'"><h4>Contact</h4></a> ';?></td>
                                     </tr>
-                                </tbody>
-                            </table>
+                </tbody>
+                </table>
                         </div>
                     </section>
                     <?php

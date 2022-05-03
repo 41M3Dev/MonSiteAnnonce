@@ -48,7 +48,7 @@
                 <form class="body" method="GET">
                     <div class="container">
                         <label>titre:</label>
-                        <input class="test" name="titre" type="text" placeholder="Votre titre" required></input>
+                        <input class="input" name="titre" type="text" placeholder="Votre titre" required></input>
                         <select class="inputbox"  name="cate" required>
                             <option value="">Catégorie</option>
                             <option value="Decoration">Décoration</option>
@@ -65,9 +65,9 @@
                         <label for="vente"> Vente </label>
                         <br> <br>
                         <label>La description:</label>
-                        <input class="test" name="descrip" type="text" placeholder="Votre description" required>
+                        <input class="input" name="descrip" type="text" placeholder="Votre description" required>
                         <label>Votre localisation:</label>
-                        <input class="test" name="loca" type="text" placeholder="Votre localisation" required>
+                        <input class="input" name="loca" type="text" placeholder="Votre localisation" required>
                         <button class="boutonC" type="submit">Envoyer</button>
                     </div>
                 </form>

@@ -27,6 +27,7 @@
 			<a href="../index.php"><h2 class="logo">WebSite</h2></a>
 			<ul>
 				<li><a href="inscription.php">S'inscire</a></li>
+                <li><a href="rechercheAvance.php">Recherche</a></li>
 				<li><a href="insert.php">Déposer une annonce</a></li>
 			</ul>
 		</nav>
@@ -35,9 +36,9 @@
         <form class="body" method="POST">
             <div class="container">
                 <label>Pseudo:</label>
-                <input class="test" name="pseudo" type="text" placeholder="Entrer votre pseudo" required>
+                <input class="input" name="pseudo" type="text" placeholder="Entrer votre pseudo" required>
                 <label>Mot de passe:</label>
-                <input class="test" name="mdp" type="password" placeholder="Mot de passe" required>
+                <input class="input" name="mdp" type="password" placeholder="Mot de passe" required>
                 <button class="boutonC" type="submit">Se connecter</button>
             </div>
         </form>

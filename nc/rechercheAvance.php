@@ -16,6 +16,7 @@
                 <a href="../index.php"><h2 class="logo">WebSite</h2></a>
                 <ul>
                     <li><a href="connexion.php">Se Connecter</a></li>
+                    <li><a href="rechercheAvance.php">Recherche</a></li>
                     <li><a href="inscription.php">S'inscire</a></li>
                     <li><a href="insert.php">Déposer une annonce</a></li>
                 </ul>
@@ -24,7 +25,7 @@
                 <h1>Votre recherche</h1>
                 <form method="GET">
                 <div class="container">
-                        <input class="test" name="titre" type="text" placeholder="Que cherchez-vous ?" required>
+                        <input class="input" name="titre" type="text" placeholder="Que cherchez-vous ?" required>
                         <select class="inputbox"  name="cate" >
                             <option value="">Catégorie</option>
                             <option value="Decoration">Décoration</option>
@@ -34,7 +35,7 @@
                             <option value="Mode">Mode</option>
                             <option value="Vehicule">Véhicule</option>
                         </select>
-                        <input class="test" name="loca" type="text" placeholder="Votre localisation" >
+                        <input class="input" name="loca" type="text" placeholder="Votre localisation" >
                         <button name="valider" class="boutonC" type="submit"> <i class="fa-solid fa-magnifying-glass"></i>Envoyer</button>
                     </div>
                 </form>

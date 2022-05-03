@@ -34,6 +34,7 @@
 			<a href="../index.php"><h2 class="logo">WebSite</h2></a>
 			<ul>
 				<li><a href="connexion.php">Se connecter</a></li>
+                <li><a href="rechercheAvance.php">Recherche</a></li>
 				<li><a href="insert.php">Déposer une annonce</a></li>
 			</ul>
 		</nav>
@@ -42,13 +43,13 @@
         <form class="body" method="POST">
             <div class="container">
                 <label>Pseudo:</label>
-                <input class="test" name="pseudo" type="text" placeholder="Entrer votre pseudo" autofocus required>
+                <input class="input" name="pseudo" type="text" placeholder="Entrer votre pseudo" autofocus required>
                 <label>email:</label>
-                <input class="test" name="email" type="text" placeholder="Adresse mail" required>
+                <input class="input" name="email" type="text" placeholder="Adresse mail" required>
                 <label>Mot de passe:</label>
-                <input class="test" name="mdp" type="password" placeholder="Mot de passe" required>
+                <input class="input" name="mdp" type="password" placeholder="Mot de passe" required>
                 <label>Re-tapez votre mot de passe:</label>
-                <input class="test" name="mdp_retaper" type="password" placeholder="Re-tapez le mot de passe" required>
+                <input class="input" name="mdp_retaper" type="password" placeholder="Re-tapez le mot de passe" required>
                 <button class="boutonC" type="submit">S'inscrire</button>
            
 

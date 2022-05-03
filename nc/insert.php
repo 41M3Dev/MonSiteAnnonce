@@ -26,6 +26,7 @@
             <a href="../index.php"><h2 class="logo">WebSite</h2></a>
             <ul>
                 <li><a href="connexion.php">Se Connecter</a></li>
+                <li><a href="rechercheAvance.php">Recherche</a></li>
                 <li><a href="inscription.php">S'inscire</a></li>
             </ul>
         </nav>
@@ -34,7 +35,7 @@
                 <form class="body" method="GET">
                     <div class="container">
                         <label>titre:</label>
-                        <input class="test" name="titre" type="text" placeholder="Votre titre" required></input>
+                        <input class="input" name="titre" type="text" placeholder="Votre titre" required>
                         <select class="inputbox"  name="cate" required>
                             <option value="">Catégorie</option>
                             <option value="Decoration">Décoration</option>
@@ -50,11 +51,11 @@
                         <label for="vente"> Vente </label>
                         <br> <br>
                         <label>La description:</label>
-                        <input class="test" name="descrip" type="text" placeholder="Votre description" required>
+                        <input class="input" name="descrip" type="text" placeholder="Votre description" required>
                         <label>Votre localisation:</label>
-                        <input class="test" name="loca" type="text" placeholder="Votre localisation" required>
+                        <input class="input" name="loca" type="text" placeholder="Votre localisation" required>
                         <label>Mail:</label>
-                        <input class="test" name="mail" type="text" placeholder="Votre mail" required>
+                        <input class="input" name="mail" type="text" placeholder="Votre mail" required>
                         <button class="boutonC" type="submit">Envoyer</button>
                     </div>
                 </form>

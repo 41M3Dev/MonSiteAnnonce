@@ -16,7 +16,6 @@
             <li><a href="../connexion/Déconnexion.php">Se déconnecter</a></li>
             <li><a href="touteAnnonce.php">Les annonces</a></li>
             <li><a href="toutCompte.php">Toutes les comptes</a></li>
-            <li><a href="../connexion/compte.php">Compte</a></li>
         </ul>
     </nav>
         <?php

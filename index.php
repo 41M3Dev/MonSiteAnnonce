@@ -28,7 +28,7 @@
 
     <div class="form__field">
               <input name="titre" type="text" class="form__input" required>
-            <button type="submit" class="bontonRecherche">
+            <button type="submit" class="searchButton">
              <i class="fa-solid fa-magnifying-glass"></i>
             </button>
             <button class="critèreB"><a href="nc/rechercheAvance.php">plus de critère</a></button>

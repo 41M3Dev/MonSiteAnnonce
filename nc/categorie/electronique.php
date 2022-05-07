@@ -7,7 +7,8 @@
 </head>
 <body id="bodyEN">
 <nav class="navbar">
-        <a href="../index.php"><h2 class="logo">WebSite</h2></a>
+<a href="../../index.php"><h2 class="logo">WebSite</h2></a>
+
         <ul>
             <li><a href="../connexion.php">Se Connecter</a></li>
             <li><a href="../rechercheAvance.php">Recherche</a></li>

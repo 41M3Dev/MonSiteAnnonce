@@ -13,10 +13,7 @@ body{
   position: relative;
 }
 
-/*bouton pour changer le slide*/
-
-/*______________________________________________________________________________________________________________________________________________*/
-
+/*Hearder*/
 .navbar{
   display: flex;
   justify-content: space-between;
@@ -46,6 +43,8 @@ list-style-type:  none;
 
 
 }
+
+/*Bloc de recherche*/
 .container {
   height:95px;
   text-transform: uppercase;
@@ -86,7 +85,7 @@ list-style-type:  none;
     cursor: pointer;
 }
 
-    
+/*Résultat de la recherche*/   
 
 section{
     width: 100%;

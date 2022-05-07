@@ -10,6 +10,44 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+/*header*/
+.navbar{
+	/*top:0;*/
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #1d1d1d;
+    width: 100%;
+}
+.logo, .navbar ul li a{
+    color:#fff ;
+}
+.navbar ul{
+    display: flex;
+    align-items: center;
+
+list-style-type:  none;
+}
+
+.navbar ul li a {
+    padding: 12px;
+    margin: 0 6px;
+}
+
+.navbar ul li a:hover{
+    color: rgb(243, 13, 52);
+    background-color: yellow;
+    border-radius: 4px;
+
+
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/*Fond d'écran*/
 #bodyV{
     background-image: url("../img/fondV.jpg");
     background-repeat: no-repeat;
@@ -46,49 +84,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
-
-
-
-
-
-
-
-
-
-a{
-    text-decoration: none;
-}
-.navbar{
-	/*top:0;*/
-    display: flex;
-    justify-content: space-between;
-    padding: 16px;
-    background-color: #1d1d1d;
-    width: 100%;
-}
-.logo, .navbar ul li a{
-    color:#fff ;
-}
-.navbar ul{
-    display: flex;
-    align-items: center;
-
-list-style-type:  none;
-}
-
-.navbar ul li a {
-    padding: 12px;
-    margin: 0 6px;
-}
-
-.navbar ul li a:hover{
-    color: rgb(243, 13, 52);
-    background-color: yellow;
-    border-radius: 4px;
-
-
-}
-
+ /*Bloc annonce*/
 div{
     width: 100%;
     margin: 20px auto;

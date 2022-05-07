@@ -44,14 +44,25 @@
         // Affihce les valeur de la base de donnée
             $sql="SELECT `titre`, `description`, `localisation`, `contact`, `categorie`,`pseudo` FROM `annonce` WHERE `pseudo` LIKE '$pseudo' ";
             $result = $bdd->query($sql);
+            
+            $result->execute();
+            $comp = $result->rowCount();
+                if( $comp == 0 ){
+                    ?>
+                    <section>
+                    <div>
+                        <?php 
+                            echo "Vos n'avait posté aucune annoce pour le moment";
+                        ?>
+
+                    </div>
+                </section>
+                <?php
+                }
 
             ?>
             
-            <form id="form_field"  method="GET" >
-            <input id ="form_input" type="text" name="supp" placeholder="Titre de l'annonce à supprimer">
-                <button id="searchButton" ><i class="fa-solid fa-ban"></i> Supprimer</button>
-                
-            </form>
+            
         <?php
             while ($row = $result->fetch(PDO::FETCH_ASSOC)){?>
             <section>
@@ -61,6 +72,9 @@
                                 <h3> Descrption : </h3>{$row['description']}<br>
                                 <h3> Localisation :</h3>{$row['localisation']} <br>";
                          echo ' <a href="mailto:'.$row['contact'].'"><h3>Contact</h3></a> '; ?>
+                         <form action="supp.php" method="GET">
+                                     Supprimer : <?php echo '<td><input type="submit" name="supp" value="'.$row['titre'].'" /></td>';?>
+                                 </form>
 
                 </div>
                 
@@ -68,20 +82,7 @@
                 <?php
             }
               
-            if(!empty($_GET['supp'])){
-                $supp= $_GET['supp'];
-                $supp = htmlspecialchars($supp);
-                $check = $bdd->prepare('SELECT titre FROM annonce WHERE titre = ?');
-                $check->execute(array($supp));
-                $data = $check->fetch();
-                $row = $check->rowCount();
-                if( $row > 0 ){
-            $requete = "DELETE FROM `annonce` WHERE titre = '$supp' AND pseudo = '$pseudo' ";
-            $supp = $bdd->prepare($requete);
-            $supp->execute();
-            echo'<script>supp("Votre annonce à bine été supprimer");</script>';
-                }
-            }
+            
         ?>
         
     </div>

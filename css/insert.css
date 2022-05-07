@@ -14,7 +14,7 @@ body{
 }
 
 
-/*__Header____________________________________________________________________________________________________________________________________________*/
+/*Hearder*/
 
 .navbar{
   display: flex;
@@ -46,11 +46,10 @@ list-style-type:  none;
   color: rgb(243, 13, 52);
   background-color: yellow;
   border-radius: 4px;
-
-
 }
+
+/*Bloc d'inscripttion*/
 main {
-  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;

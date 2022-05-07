@@ -47,7 +47,7 @@
 </html>
 <?php
         session_start();
-        if(!empty($_POST['pseudo']) && !empty($_POST['mdp']) && $_POST['pseudo'] != 'admin123')
+        if(!empty($_POST['pseudo']) && !empty($_POST['mdp']) && $_POST['pseudo'] != 'admin')
         {
             $pseudo = htmlspecialchars($_POST['pseudo']); 
             $mdp = htmlspecialchars($_POST['mdp']);
@@ -75,22 +75,23 @@
         
     else
         {   
-            if(!empty($_GET['pseudo']) && !empty($_GET['mdp']))
+            if(!empty($_POST['pseudo']) && !empty($_POST['mdp']))
             {
-                $pseudo = htmlspecialchars($_GET['pseudo']); 
-                $mdp = htmlspecialchars($_GET['mdp']);
+                $pseudo = htmlspecialchars($_POST['pseudo']); 
+                $mdp = htmlspecialchars($_POST['mdp']);
                 $check = $bdd->prepare('SELECT pseudo, password FROM admin WHERE pseudo = ?');
                 $check->execute(array($pseudo));
                 $data = $check->fetch();
-                $row = $check->rowCount();
-                if( $row > 0 )
-                {
-                    if(password_verify($mdp, $data['password']))
+                    if($mdp == 'pass')
                     {
                         $_SESSION['pseudo'] = $data['pseudo'];
                         header('Location:../admin/admin.php');
-                    }else{echo"mdp pas bon";}
+                    }else{
+                        ?>
+                        <script>connexionNonValide("Mot de passe incorrect.");</script>
+                        <?php
+                        }
                 }
-            }      
+                  
             }
 ?>

@@ -63,7 +63,7 @@ main {
 .container {
   text-transform: uppercase;
 }
-.container > label {
+.container label {
   letter-spacing: 3px;
   font-size: 1rem;
 }

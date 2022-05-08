@@ -5,6 +5,9 @@
     $req = $bdd->prepare('SELECT * FROM admin WHERE pseudo = ?');
     $req->execute(array($_SESSION['pseudo']));
     $data = $req->fetch();
+    if($_SESSION['pseudo'] != 'admin'){
+        header('Location: ../nc/connexion.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">

@@ -1,7 +1,13 @@
-<!DOCTYPE html>
-<?php 
-    // Connexion et choix de la base de données
+<?php
+    session_start();
     require_once '../config/config.php';
+    
+    $req = $bdd->prepare('SELECT * FROM admin WHERE pseudo = ?');
+    $req->execute(array($_SESSION['pseudo']));
+    $data = $req->fetch();
+    if($_SESSION['pseudo'] != 'admin'){
+        header('Location: ../nc/connexion.php');
+    }
 ?>
 <html lang="fr">
 <head>
@@ -11,9 +17,9 @@
 </head>
 <body>
 <nav class="navbar">
-        <a href=""><h2 class="logo">Admin</h2></a>
+        <a href="admin.php"><h2 class="logo">Admin</h2></a>
         <ul>
-            <li><a href="../connexion/Déconnexion.php">Se déconnecter</a></li>
+            <li><a href="../config/deconnexion.php">Se déconnecter</a></li>
             <li><a href="touteAnnonce.php">Les annonces</a></li>
             <li><a href="toutCompte.php">Toutes les comptes</a></li>
         </ul>
@@ -21,8 +27,9 @@
         <?php
         // Affihce les valeur de la base de donnée
             $sql="SELECT `pseudo`, `email`, `date_inscription` FROM `utilisateurs`";
-            
-             $result = $bdd->query($sql);
+            $result = $bdd->query($sql);
+            $row = $result->rowCount();
+            echo"<h1>Il a $row compte. </h1>";
 
             while ($row = $result->fetch(PDO::FETCH_ASSOC)){?>
             <section>
